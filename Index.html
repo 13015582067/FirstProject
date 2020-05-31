@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport"
+          content="width=device-width,initial-scale=1,
+          user-scalable=no">
+    <title>刘会芳</title>
+    <link rel="short icon" href="Resource/icon.png">
+    <!--加载外部样式-->
+    <link rel="stylesheet" href="ExternalStyle.css">
+    <script type="text/javascript" src="CommonMethod.js"></script>
+
+    <style>
+        .L_second_div{
+            text-align: center;
+        }
+        .L_second_div img{
+            margin-top: 50px;
+        }
+        .L_form_div{
+            background: white;
+            width: 90%;
+            margin: 20px auto;
+            border: 1px solid #cccccc;
+            /*加边框 */
+            border-radius: 5px;
+        }
+        .L_account_div{
+            height: 50px;
+            border-bottom: 1px solid #cccccc;
+        }
+        .L_form_div div span{
+            font-size: 20px;
+            padding-left: 15px;
+            line-height: 50px;
+        }
+        input{
+            outline: medium;
+            background-color: transparent;
+            border: 0;
+            /*去除输入账号密码时的小边框*/
+        }
+        .L_login_btn_div{
+            height: 50px;
+            background: rgb(36,92,161);
+            width: 90%;
+            border-radius: 10px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .L_login_btn_div input{
+            line-height: 50px;
+            font-size: 20px;
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+<!--第一部分-->
+<header class="DS_header">
+    <span>登录</span>
+</header>
+<!--第二部分-->
+<div class="L_second_div">
+    <img class="L_head_img" src="Resource/head.png" alt="">
+</div>
+<!--第三部分-->
+<form action="">
+    <div class="L_form_div">
+        <div class="L_account_div">
+            <span>账号名</span>
+            <input id="L_account" type="text" name="account" value="hskj"><br>
+            <!-- value="hskj" 不用重复输入，打开就是-->
+        </div>
+        <div>
+            <span>密码</span>
+         <input id="L_pwd"type="password" name="password" value="123456"><br>
+        </div>
+    </div>
+    <div class="L_login_btn_div">
+        <input type="button" value="登录" id="L_btn">
+    </div>
+</form>
+
+<script>
+    // <!--方法一，直接在 <input type="button" value="登录" onclick="login1()">-->
+//   function login() {
+//  alert("账号密码不能为空");
+//   }
+// // 方法二
+//     var login1 = function () {
+//
+//         alert("账号密码不能为空")
+//
+//     }
+//    方法三
+    var btn =document.querySelector("#L_btn");
+    btn.onclick =function(){
+        // 用户名和密码是写死的
+       // var userName=document.querySelector("#L_account").value;
+       // var pwd = document.querySelector("#L_pwd").value;
+       // if( userName =="hskj" && pwd == "123456"){
+       //      location.href="one.html";
+       // }
+       // else{
+       //     alert("账号密码不能为空")
+       // }
+       // encode 数据编码为服务器可读懂的格式
+        var userName = encodeURIComponent(document.querySelector("#L_account").value);
+        var pwd = encodeURIComponent(document.querySelector("#L_pwd").value);
+        //第一步：创建一个请求对象（负责去服务器要数据）
+       // var xhr = new XMLHttpRequest();
+        //第二步：（找到哪个服务器去要数据）
+       // xhr.open("post","https://mockapi.eolinker.com/2ZhGVxjacb39010e6753bd9c02ee803e6e3bfeab6e8007c/login");
+        //设置头信息，告诉服务器让数据以表单的形式传递过去
+       // xhr.setRequestHeader("content-type","application/x-www-form-urlencoded")
+        //第三步：向服务器端发送请求
+        var par = "username="+userName + "&pwd=" + pwd;
+        var str = requestMethod('post','login',par);
+       // xhr.send(par);
+        //第四步：接受服务端返回的数据
+        // xhr.onreadystatechange =function () {
+        //     if(xhr.readyState == 4 && xhr.status==200){
+        //         var responseData =JSON.parse(xhr.responseText);
+        //         var str=responseData.data;
+                if(str=="登录成功"){
+                location.href="one.html"
+                }
+           // }
+            else{
+                alert("responseData.data");
+            }
+        }
+
+          //  }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: rgb(244,244,246);
+    padding-top: 44px;
+    padding-bottom:49px;
+}
+
+.DS_header{
+    background: rgb(40,133,202);
+    line-height: 44px;
+    font-size: 18px;
+    text-align: center;
+    /*文字居中*/
+    color: white;
+
+    /*固定定位：确定位置，加个螺丝钉*/
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+
+    z-index:9999;
+    /*防止被后来者掩盖*/
+}
+
+.DS_second_section img{
+    width: 100%;
+}
+
+.DS_second_section img{
+    margin-bottom: -6px;
+}
+
+footer a span{
+    display: block;
+    color: white;
+    font-size: 12px;
+}
+
+footer{
+    display: table;
+    height: 49px;
+    background: black;
+
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    /*位置固定*/
+}
+
+footer a{
+    display: table-cell;
+    width: 20%;
+    text-decoration: none;
+    /*去掉文字的下划线*/
+    text-align: center;
+    vertical-align: middle;
+}
+
+footer a img{
+    width: 18px;
+}
+
+.BP_first_section{
+    display: table;
+    height: 49px;
+    width: 100%;
+
+}
+
+.BP_first_section a{
+
+    display: table-cell;
+    width:33.3%;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.BP_first_section a span{
+    color: black;
+}
+
+.BP_external_div{
+    background: white;
+    text-align: center;
+}
+
+.BP_span{
+    font-size: 14px;
+}
+
+.BP_img{
+    width: 100%;
+}
+
+.BP_first_p{
+    font-size: 10px;
+    color: gray;
+}
+
+.BP_inner_div{
+    text-align: left;
+    font-size: 10px;
+    color: gray;
+    padding-left: 20px;
+      line-height:2em ;
+}
